@@ -10,6 +10,8 @@ Model reasoning isn't reproducible: the same prompt, run twice, can yield differ
 
 A deterministic operator that revises a belief (or a constraint state) under new evidence and emits a proof of the change — replayable, and recomputable offline by someone who doesn't trust us. The shipped verb today is the narrowest one: catch a rule you retracted that came back. The direction is a family of verbs — *curate, revise, prove*, and further out *branch, compare, compose* — over your own storage. *(Most of that family is build-direction, not a shipped feature yet.)*
 
+A worked example: [indexing a real project's reversals](showcase/diachronic/). Over [yazelix](https://github.com/luccahuguet/yazelix)'s rule-file history, the operator anchors every change to the exact commit and proves each with an ER1 receipt you recompute offline, in two languages — while a flat long-context model, reading the same history, narrates the gist but can't say which version anything changed in. We index how facts *changed*, not facts.
+
 ## What we don't solve yet
 
 We certify **coherence, not correctness** — garbage in, certified garbage out. The revision operator is deterministic and guaranteed; reading beliefs out of free prose is honest-and-improving, not solved, and a prose-extracted belief never gates a HALT. We measure perception; we don't assert it. The honest edge is the point: a proof is only worth anything if it admits exactly what it cannot see.
