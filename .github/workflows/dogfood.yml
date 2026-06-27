@@ -1,0 +1,24 @@
+name: Dogfood
+
+# Scan our org conventions (AGENTS.md) with the PUBLISHED Sagrada Linter Action (@v0) on every push —
+# the determinism we sell, applied to ourselves, via the same Action a stranger would use.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write   # the Action posts a result comment on PRs (skipped on push)
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history so scan-history can read AGENTS.md's revisions
+      - name: Scan org conventions with the published Sagrada Linter
+        uses: Cruxia-Labs/sagrada-linter@v0
+        with:
+          paths: AGENTS.md
