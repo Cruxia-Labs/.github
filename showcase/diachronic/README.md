@@ -1,6 +1,8 @@
 # We index how facts *changed*, not facts
 
-> A flat long-context model and a deterministic operator read the **same** `CLAUDE.md` from the real **yazelix** repo. The model narrates a plausible story — and even gets the gist right — but it can't tell you which version each change happened in, and it misses a rule that was retracted then quietly re-added. The operator recomputes the real change-graph: every reversal anchored to the exact commit, each proved by a receipt you re-verify offline, in two languages, without trusting us. *Within-harness: the baseline is a flat reading of this very file, not a comparison to any vendor.*
+> A flat long-context model and a deterministic operator read the **same** `CLAUDE.md` from the real **yazelix** repo. The model narrates a plausible story — and even gets the gist right — but it can't tell you which version each change happened in, and it misses a rule that was retracted then quietly re-added. The operator recomputes the real change-graph: every reversal anchored to the exact commit, each proved by a receipt you re-verify offline, in two languages, without trusting us.
+
+**This is an ablation, not a contest.** The baseline is the *same local model* doing the *same read* with the operator removed — the question isn't "operator vs. an 8B model," it's whether reading a project's change-graph needs the deterministic operator at all. (It does: the model narrates; the operator anchors and proves.)
 
 ## The history — the real `CLAUDE.md` history of yazelix (18 recorded versions)
 
